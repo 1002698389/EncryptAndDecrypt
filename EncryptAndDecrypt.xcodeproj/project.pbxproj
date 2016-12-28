@@ -18,6 +18,7 @@
 		04A781DE1E13BA7F0096F646 /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 04A781DC1E13BA7F0096F646 /* private_key.p12 */; };
 		04A781DF1E13BA800096F646 /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = 04A781DD1E13BA7F0096F646 /* public_key.der */; };
 		04A781E11E13C56B0096F646 /* 生成RSA公钥私钥方法 in Resources */ = {isa = PBXBuildFile; fileRef = 04A781E01E13C56B0096F646 /* 生成RSA公钥私钥方法 */; };
+		04A781E71E13CC100096F646 /* NSString+MD5_32Bit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A781E61E13CC100096F646 /* NSString+MD5_32Bit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		04A781DC1E13BA7F0096F646 /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
 		04A781DD1E13BA7F0096F646 /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
 		04A781E01E13C56B0096F646 /* 生成RSA公钥私钥方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "生成RSA公钥私钥方法"; sourceTree = "<group>"; };
+		04A781E51E13CC100096F646 /* NSString+MD5_32Bit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5_32Bit.h"; sourceTree = "<group>"; };
+		04A781E61E13CC100096F646 /* NSString+MD5_32Bit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5_32Bit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				04A781C31E13AFB90096F646 /* AppDelegate.m */,
 				04A781C51E13AFB90096F646 /* ViewController.h */,
 				04A781C61E13AFB90096F646 /* ViewController.m */,
+				04A781E51E13CC100096F646 /* NSString+MD5_32Bit.h */,
+				04A781E61E13CC100096F646 /* NSString+MD5_32Bit.m */,
 				04A781D61E13B0240096F646 /* RSAEncryption.h */,
 				04A781D71E13B0240096F646 /* RSAEncryption.m */,
 				04A781E01E13C56B0096F646 /* 生成RSA公钥私钥方法 */,
@@ -184,6 +189,7 @@
 				04A781C41E13AFB90096F646 /* AppDelegate.m in Sources */,
 				04A781D81E13B0240096F646 /* RSAEncryption.m in Sources */,
 				04A781C11E13AFB90096F646 /* main.m in Sources */,
+				04A781E71E13CC100096F646 /* NSString+MD5_32Bit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +348,7 @@
 				04A781D51E13AFB90096F646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
