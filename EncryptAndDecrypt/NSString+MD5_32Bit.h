@@ -10,6 +10,18 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @interface NSString (MD5_32Bit)
+
+/**
+ MD5加密
+
+ @return 返回的字符串字母全部小写
+ */
 - (NSString*)md532BitLower;
+
+/**
+ MD5加密大写
+
+ @return 返回的字符串中字母全部大写
+ */
 - (NSString*)md532BitUpper;
 @end

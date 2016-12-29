@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "RSAEncryption.h"
 #import "NSString+MD5_32Bit.h"
+#import "GTMBase64.h"
+#import "DESEncryption.h"
+#import "NSData+AES.h"
 @interface ViewController ()
 
 @end
@@ -40,8 +43,48 @@
 
    NSLog(@"MD5加密小写：%@",[originalString md532BitLower]) ;
    NSLog(@"MD5加密大写：%@",[originalString md532BitUpper]) ;
+    
+    NSLog(@"%@",[DESEncryption DESEncryptWithText:@"这是一个des的加密算法"]);
+    NSLog(@"%@",[DESEncryption DESDecryptWithText:[DESEncryption DESEncryptWithText:@"这是一个des的加密算法"]]);
+    [self GTMBase64Encryption];
+    
+//    NSData *data = [@"woshiyigeceshi" dataUsingEncoding:NSUTF8StringEncoding];
+//    NSData *data1 = [data AES256EncryptWithKey:@"key"];
+//    NSLog(@"----------------%@",data1 );
+//    NSData *data2 = [[data AES256EncryptWithKey:@"key"] AES256EncryptWithKey:@"key"] ;
+//    NSLog(@"----------------%@",data2);
+//    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
+//    NSString *str = [[NSString alloc]initWithData:data2 encoding:enc];
+//    NSString *str2 = [[NSString alloc]initWithData:data2 encoding:NSUTF8StringEncoding];
+//        NSLog(@"%@--%@",str,str2);
 }
-
+- (void)GTMBase64Encryption
+{
+    //进行md5编码
+    NSString *strmd5 = [GTMBase64 md5_base64:@"test"];
+    NSLog(@"strmd5:%@",strmd5);
+    //进行Base64编码
+    NSString *strenBase64 = [GTMBase64 encodeBase64String:@"test"];
+    NSLog(@"strenBase64:%@",strenBase64);
+    //进行Base64解码
+    NSString *strdeBase64 = [GTMBase64 decodeBase64String:@"dGVzdA=="];
+    NSLog(@"strdeBase64:%@",strdeBase64);
+    
+    //创建字符串，并将字符串转换成NSData
+    NSString *aString = @"test";
+    NSData *aData = [aString dataUsingEncoding: NSUTF8StringEncoding];
+    //进行Base64编码
+    NSString *strenDataBase64 = [GTMBase64 encodeBase64Data:aData];
+    NSLog(@"strenDataBase64:%@",strenDataBase64);
+    
+    //先将字符串转换成NSData类型
+    NSString *bString = @"dGVzdA==";
+    NSData *bData = [bString dataUsingEncoding: NSUTF8StringEncoding];
+    //进行Base64解码
+    NSData *deDataBase64 = [GTMBase64 decodeData:bData];
+    NSString *strdeDataBase64 = [[NSString alloc] initWithData:deDataBase64 encoding:NSUTF8StringEncoding];
+    NSLog(@"strenDataBase64:%@",strdeDataBase64);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
